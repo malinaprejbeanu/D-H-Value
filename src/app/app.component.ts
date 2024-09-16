@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent { }
+export class AppComponent {
+  public cardTitle: string = '';
+
+  public onCardTitleChange(value: string): void {
+    this.cardTitle = value;
+  }
+}

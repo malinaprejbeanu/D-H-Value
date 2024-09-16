@@ -2,12 +2,33 @@
   <mat-form-field class="example-form-field" appearance="fill">
     <mat-label>Title Input</mat-label>
 
-    <input matInput type="text">
+    <input
+      [(ngModel)]="cardTitle"
+      (ngModelChange)="onCardTitleChange($event)"
+      type="text"
+      matInput
+    >
+  </mat-form-field>
+
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Content Input</mat-label>
+
+    <input
+      [(ngModel)]="cardContent"
+      (ngModelChange)="onCardContentChange($event)"
+      type="text"
+      matInput
+    >
   </mat-form-field>
 
   <mat-form-field class="example-form-field" appearance="fill">
     <mat-label>Subtitle Input</mat-label>
 
-    <input matInput type="text">
+    <input
+      [(ngModel)]="cardSubtitle"
+      (ngModelChange)="onCardSubtitleChange($event)"
+      type="number"
+      matInput
+    >
   </mat-form-field>
 </div>

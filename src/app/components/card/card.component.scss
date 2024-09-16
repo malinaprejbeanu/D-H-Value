@@ -1,10 +1,10 @@
 @use '@angular/material' as mat;
 
 ::ng-deep .mat-card {
-    padding: 16px;
-    background-color: #2E5DA4;
-    height: 114px;
-    width: 215px;
+  padding: 16px;
+  background-color: #2E5DA4;
+  height: 114px;
+  width: 215px;
 
   &.cdk-drag-dragging {
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);

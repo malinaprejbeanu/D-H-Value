@@ -25,12 +25,16 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6">
-      <app-card></app-card>
+    <div class="col-md-9">
+      <app-card
+        [cardTitle]="cardTitle"
+      ></app-card>
     </div>
 
-    <div class="col-md-6">
-      <app-display></app-display>
+    <div class="col-md-3">
+      <app-display
+        (cardTitleChange)="onCardTitleChange($event)"
+      ></app-display>
     </div>
   </div>
 </div>

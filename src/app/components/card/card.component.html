@@ -1,13 +1,15 @@
 <div style="display: flex; gap: 20px; flex-direction: column;">
   <mat-card color="accent" matRipple>
     <mat-card-title>
-     Title
+      {{ cardTitle }}
     </mat-card-title>
 
-    <mat-card-subtitle>3</mat-card-subtitle>
+    <mat-card-subtitle>
+      {{ cardSubtitle$ | async }}
+    </mat-card-subtitle>
 
     <mat-card-content>
-     Subtitle
+      {{ cardContent$ | async }}
     </mat-card-content>
 
     <mat-icon>home</mat-icon>
