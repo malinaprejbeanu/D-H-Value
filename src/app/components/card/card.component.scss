@@ -1,62 +1,47 @@
 @use '@angular/material' as mat;
 
 ::ng-deep .mat-card {
-  padding: 16px;
+  padding: 16px 16px 24px 24px !important;
   background-color: #2E5DA4;
-  height: 114px;
-  width: 215px;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 81px;
+  width: 214px;
 
   &.cdk-drag-dragging {
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
     z-index: 3;
   }
 
-  .mat-card-image {
-    height: 90px;
-    object-fit: cover;
-  }
-
-  .mat-card-title {
-    min-height: 40px !important;
-    margin: 16px 0;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-  }
-
-  .mat-card-image {
-    width: calc(100% + 48px);
-    margin: 0 -24px 16px -24px;
-
-    &:first-child {
-      margin-bottom: 0;
-    }
-  }
-
   &.mat-ripple {
-    cursor: pointer;
-    min-width: 224px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas:
+      "title title subtitle"
+      "content content subtitle";
+    gap: 8px;
     justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
 
     >.mat-card-title {
-      min-height: 24px;
-      align-self: flex-start;
-      max-width: 75%;
-      line-height: 20px;
-      margin-bottom: 4px;
+      grid-area: title;
+      margin-bottom: 0;
       font-size: 16px;
+      line-height: 16px;
     }
 
     >.mat-card-subtitle {
+      grid-area: subtitle;
       margin-bottom: 0;
-      font-size: 12px;
+      margin-top: 0;
+      font-size: 32px;
       color: inherit;
     }
 
     >.mat-card-content {
-      width: 100%;
+      grid-area: content;
+      margin-bottom: 0;
+      line-height: 14px;
     }
 
     >.mat-icon {
