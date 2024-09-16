@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DisplayComponent } from './display.component';
 
 describe('DisplayComponent', () => {
@@ -9,9 +8,10 @@ describe('DisplayComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ DisplayComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(DisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
