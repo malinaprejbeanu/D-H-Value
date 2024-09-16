@@ -1,7 +1,10 @@
-<div style="display: flex; gap: 20px; flex-direction: column;">
-  <mat-card color="accent" matRipple>
+<div
+  [ngClass]="classes"
+  style="display: flex; gap: 20px; flex-direction: column;"
+>
+  <mat-card matRipple>
     <mat-card-title>
-      {{ cardTitle }}
+      {{ cardTitle | titlecase }}
     </mat-card-title>
 
     <mat-card-subtitle>
@@ -9,7 +12,7 @@
     </mat-card-subtitle>
 
     <mat-card-content>
-      {{ cardContent$ | async }}
+      {{ cardContent$ | async | titlecase }}
     </mat-card-content>
 
     <mat-icon>home</mat-icon>
