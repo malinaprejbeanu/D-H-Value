@@ -1,11 +1,13 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { CardType } from './app.values';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
   private cardContent$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private cardStatus$: BehaviorSubject<CardType> = new BehaviorSubject<CardType>(CardType.DEFAULT);
   private cardSubtitle$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   public getCardContent(): Observable<string> {
@@ -16,11 +18,21 @@ export class AppService {
     return this.cardSubtitle$.asObservable();
   }
 
+  public getCardStatus(): Observable<CardType> {
+    return this.cardStatus$.asObservable();
+  }
+
   public setCardContent(value: string): void {
     this.cardContent$.next(value ?? '');
   }
 
-  public setCardSubtitle(value: number): void {
-    this.cardSubtitle$.next(value ?? 0);
+  public setCardStatus(value: CardType): void {
+    this.cardStatus$.next(value);
+  }
+
+  public increaseSubtitle(): void {
+    let value: number = this.cardSubtitle$.getValue() ?? 0;
+    value++;
+    this.cardSubtitle$.next(value);
   }
 }

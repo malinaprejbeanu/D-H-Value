@@ -12,7 +12,7 @@
 
   <br />
 
-  <p>Status mat-card: <b>Afiseaza aici statusul cardului ( open / closed )</b></p>
+  <p>Status mat-card: <b>{{ cardStatus$ | async | uppercase }}</b></p>
 
   <p>Inputuri pentru card-container</p>
 
@@ -20,18 +20,23 @@
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label>Title container Input</mat-label>
 
-      <input matInput type="text">
+      <input
+        [(ngModel)]="cardContainerTitle"
+        type="text"
+        matInput
+      >
     </mat-form-field>
   </div>
 
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-6">
       <app-card
         [cardTitle]="cardTitle"
+        [cardContainerTitle]="cardContainerTitle"
       ></app-card>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-6">
       <app-display
         (cardTitleChange)="onCardTitleChange($event)"
       ></app-display>

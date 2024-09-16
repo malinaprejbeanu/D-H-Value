@@ -8,7 +8,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class DisplayComponent {
   public cardContent: string = '';
-  public cardSubtitle: number = 0;
   public cardTitle: string = '';
 
   @Output() public cardTitleChange: EventEmitter<string> = new EventEmitter<string>();
@@ -23,9 +22,5 @@ export class DisplayComponent {
 
   protected onCardContentChange(value: string): void {
     this.appService.setCardContent(value);
-  }
-
-  protected onCardSubtitleChange(value: number): void {
-    this.appService.setCardSubtitle(value);
   }
 }

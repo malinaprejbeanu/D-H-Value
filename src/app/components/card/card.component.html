@@ -2,13 +2,20 @@
   [ngClass]="classes"
   style="display: flex; gap: 20px; flex-direction: column;"
 >
-  <mat-card matRipple>
+  <mat-card
+    (click)="onSelect(true)"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+    matRipple
+  >
     <mat-card-title>
       {{ cardTitle | titlecase }}
     </mat-card-title>
 
     <mat-card-subtitle>
-      {{ cardSubtitle$ | async }}
+      <ng-container *ngIf="state !== cardType.DISABLED">
+        {{ cardSubtitle$ | async }}
+      </ng-container>
     </mat-card-subtitle>
 
     <mat-card-content>
@@ -18,11 +25,11 @@
     <mat-icon>home</mat-icon>
   </mat-card>
 
-  <div class="card-container">
+  <div *ngIf="isVisible" class="card-container">
     <div class="card-container__header">
-      <h1>Title Container</h1>
+      <h1>{{ cardContainerTitle | titlecase }}</h1>
 
-      <mat-icon>close</mat-icon>
+      <mat-icon (click)="onSelect(false)">close</mat-icon>
     </div>
 
     Please detach component and add the content that you need. The icon from the bottom should be the same with the icon from cluster card that is active
