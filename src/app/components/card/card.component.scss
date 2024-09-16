@@ -73,9 +73,47 @@
 }
 
 .card-container {
-  width: 580px;
-  border: 1px solid;
-  padding: 24px;
+  width: 589px;
+  box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  padding: 16px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    > * {
+      font-size: 24px;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+
+  &__icon-bottom {
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    width: auto;
+    height: auto;
+    font-size: 48px;
+    opacity: .1;
+  }
 }
 
 
